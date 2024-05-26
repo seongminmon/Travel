@@ -1,5 +1,5 @@
 //
-//  TravelTableViewController.swift
+//  MagazineTableViewController.swift
 //  Travel
 //
 //  Created by 김성민 on 5/25/24.
@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class TravelTableViewController: UITableViewController {
+class MagazineTableViewController: UITableViewController {
 
     let list = MagazineInfo().magazine
     
@@ -23,7 +23,7 @@ class TravelTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TravelTableViewCell", for: indexPath) as! TravelTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "MagazineTableViewCell", for: indexPath) as! MagazineTableViewCell
         
         let magazine = list[indexPath.row]
         

@@ -1,5 +1,5 @@
 //
-//  TravelTableViewCell.swift
+//  MagazineTableViewCell.swift
 //  Travel
 //
 //  Created by 김성민 on 5/25/24.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TravelTableViewCell: UITableViewCell {
+class MagazineTableViewCell: UITableViewCell {
     
     @IBOutlet var photoImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
