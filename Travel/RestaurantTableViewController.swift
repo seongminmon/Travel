@@ -13,7 +13,12 @@ class RestaurantTableViewController: UITableViewController {
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var searchButton: UIButton!
     
-    var list = RestaurantList().restaurantArray
+    @IBOutlet var allButton: UIButton!
+    @IBOutlet var koreanButton: UIButton!
+    @IBOutlet var cheaperButton: UIButton!
+    
+    let list = RestaurantList().restaurantArray
+    var filteredList: [Restaurant] = []
     var likeList: [Bool] = []
     
     override func viewDidLoad() {
@@ -21,33 +26,66 @@ class RestaurantTableViewController: UITableViewController {
         
         tableView.rowHeight = 150
         
+        filteredList = list
         likeList = [Bool](repeating: false, count: list.count)
         
         searchTextField.placeholder = "가게 이름을 검색해보세요"
         searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+        
+        configureButton(button: allButton)
+        configureButton(button: koreanButton)
+        configureButton(button: cheaperButton)
+        
+        allButton.addTarget(self, action: #selector(allButtonTapped), for: .touchUpInside)
+        koreanButton.addTarget(self, action: #selector(koreanButtonTapped), for: .touchUpInside)
+        cheaperButton.addTarget(self, action: #selector(cheaperButtonTapped), for: .touchUpInside)
+    }
+    
+    func configureButton(button: UIButton) {
+        button.titleLabel?.font = .systemFont(ofSize: 14, weight: .bold)
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemPink
+        button.layer.cornerRadius = 20
     }
     
     @objc func searchButtonTapped() {
         guard let keyword = searchTextField.text, keyword != "" else { return }
         
-        // 가게 이름으로 검색
-        list = list.filter { $0.name.contains(keyword) }
+        // 검색
+        filteredList = list.filter {
+            $0.name.contains(keyword) ||
+            $0.category.contains(keyword) ||
+            $0.address.contains(keyword)
+        }
         // 테이블뷰 갱신
         tableView.reloadData()
-        // 텍스트 필드 비우기
-        searchTextField.text = ""
         // 키보드 내리기
         view.endEditing(true)
     }
     
+    @objc func allButtonTapped() {
+        filteredList = list
+        tableView.reloadData()
+    }
+    
+    @objc func koreanButtonTapped() {
+        filteredList = list.filter { $0.category == "한식" }
+        tableView.reloadData()
+    }
+    
+    @objc func cheaperButtonTapped() {
+        filteredList = list.filter { $0.price <= 10_000 }
+        tableView.reloadData()
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return filteredList.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RestaurantTableViewCell", for: indexPath) as! RestaurantTableViewCell
         
-        let restaurant = list[indexPath.row]
+        let restaurant = filteredList[indexPath.row]
         
         let url = URL(string: restaurant.image)
         cell.posterImageView.kf.setImage(with: url)
@@ -71,7 +109,6 @@ class RestaurantTableViewController: UITableViewController {
         cell.addressLabel.text = restaurant.address
         cell.addressLabel.font = .systemFont(ofSize: 16)
         cell.addressLabel.numberOfLines = 2
-        
         
         let image = likeList[indexPath.row] ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
         cell.likeButton.setImage(image, for: .normal)

@@ -20,6 +20,7 @@
 		243101A02C02133700E19C97 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 2431019F2C02133700E19C97 /* Kingfisher */; };
 		243101A22C0305AE00E19C97 /* RestaurantTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243101A12C0305AE00E19C97 /* RestaurantTableViewCell.swift */; };
 		243101A42C0305BD00E19C97 /* RestaurantTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 243101A32C0305BD00E19C97 /* RestaurantTableViewController.swift */; };
+		2494447D2C04879200AEBAB4 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2494447C2C04879100AEBAB4 /* TravelModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		2431019C2C02126600E19C97 /* MagazineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MagazineTableViewCell.swift; sourceTree = "<group>"; };
 		243101A12C0305AE00E19C97 /* RestaurantTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewCell.swift; sourceTree = "<group>"; };
 		243101A32C0305BD00E19C97 /* RestaurantTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantTableViewController.swift; sourceTree = "<group>"; };
+		2494447C2C04879100AEBAB4 /* TravelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				243101A32C0305BD00E19C97 /* RestaurantTableViewController.swift */,
 				243101A12C0305AE00E19C97 /* RestaurantTableViewCell.swift */,
 				243101972C020F6900E19C97 /* Restaurant.swift */,
+				2494447C2C04879100AEBAB4 /* TravelModel.swift */,
 				243101882C020F0600E19C97 /* Main.storyboard */,
 				2431018B2C020F0800E19C97 /* Assets.xcassets */,
 				2431018D2C020F0800E19C97 /* LaunchScreen.storyboard */,
@@ -171,6 +174,7 @@
 				243101872C020F0600E19C97 /* ViewController.swift in Sources */,
 				243101A22C0305AE00E19C97 /* RestaurantTableViewCell.swift in Sources */,
 				243101982C020F6900E19C97 /* MagazineInfo.swift in Sources */,
+				2494447D2C04879200AEBAB4 /* TravelModel.swift in Sources */,
 				243101832C020F0600E19C97 /* AppDelegate.swift in Sources */,
 				243101852C020F0600E19C97 /* SceneDelegate.swift in Sources */,
 			);
