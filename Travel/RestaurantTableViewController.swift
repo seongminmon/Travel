@@ -13,8 +13,7 @@ class RestaurantTableViewController: UITableViewController {
     @IBOutlet var searchTextField: UITextField!
     @IBOutlet var searchButton: UIButton!
     
-    let list = RestaurantList().restaurantArray
-    
+    var list = RestaurantList().restaurantArray
     var likeList: [Bool] = []
     
     override func viewDidLoad() {
@@ -23,6 +22,22 @@ class RestaurantTableViewController: UITableViewController {
         tableView.rowHeight = 150
         
         likeList = [Bool](repeating: false, count: list.count)
+        
+        searchTextField.placeholder = "가게 이름을 검색해보세요"
+        searchButton.addTarget(self, action: #selector(searchButtonTapped), for: .touchUpInside)
+    }
+    
+    @objc func searchButtonTapped() {
+        guard let keyword = searchTextField.text, keyword != "" else { return }
+        
+        // 가게 이름으로 검색
+        list = list.filter { $0.name.contains(keyword) }
+        // 테이블뷰 갱신
+        tableView.reloadData()
+        // 텍스트 필드 비우기
+        searchTextField.text = ""
+        // 키보드 내리기
+        view.endEditing(true)
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -45,7 +60,6 @@ class RestaurantTableViewController: UITableViewController {
         cell.categoryLabel.text = restaurant.category
         cell.categoryLabel.font = .systemFont(ofSize: 16)
         cell.categoryLabel.textAlignment = .right
-//        cell.categoryLabel.textColor = .lightGray
         
         cell.priceLabel.text = restaurant.price.formatted() + "원"
         cell.priceLabel.font = .systemFont(ofSize: 16)
@@ -53,7 +67,6 @@ class RestaurantTableViewController: UITableViewController {
         
         cell.phoneNumberLabel.text = restaurant.phoneNumber
         cell.phoneNumberLabel.font = .systemFont(ofSize: 16)
-//        cell.phoneNumberLabel.textColor = .lightGray
         
         cell.addressLabel.text = restaurant.address
         cell.addressLabel.font = .systemFont(ofSize: 16)

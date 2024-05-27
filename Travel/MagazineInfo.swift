@@ -14,11 +14,11 @@ struct Magazine {
     let link: String
     
     var dateString: String {
-        let date = date.map { String($0) }
-        let year = date[0..<2].joined()
-        let month = date[2..<4].joined()
-        let day = date[4..<6].joined()
-        return "\(year)년 \(month)월 \(day)일"
+        let dateformatter = DateFormatter()
+        dateformatter.dateFormat = "yyMMdd"
+        guard let convertDate = dateformatter.date(from: date) else { return "" }
+        dateformatter.dateFormat = "yyyy년 MM월 dd일"
+        return dateformatter.string(from: convertDate)
     }
 }
 
