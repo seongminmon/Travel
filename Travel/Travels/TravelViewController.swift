@@ -18,11 +18,11 @@ class TravelViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "도시 상세 정보"
-        
+    }
+    
+    func configureTableView() {
         tableView.dataSource = self
         tableView.delegate = self
-        
-//        tableView.rowHeight = 120
         
         let travelCell = UINib(nibName: "TravelTableViewCell", bundle: nil)
         tableView.register(travelCell, forCellReuseIdentifier: "TravelTableViewCell")
@@ -50,7 +50,7 @@ extension TravelViewController: UITableViewDataSource {
                 for: indexPath
             ) as! AdTableViewCell
             
-            cell.configure(data: data.title)
+            cell.configureCell(data: data.title)
             
             cell.selectionStyle = .none
             return cell

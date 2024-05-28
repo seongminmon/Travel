@@ -31,12 +31,10 @@ class AdTableViewCell: UITableViewCell {
         contentView.layer.cornerRadius = 18
     }
     
-    func configure(data: String) {
+    func configureCell(data: String) {
         mainLabel.text = data
         markLabel.text = "AD"
-        
-        let colors: [UIColor] = [.systemTeal, .systemBlue, .systemBrown, .systemOrange, .systemIndigo]
-        contentView.backgroundColor = colors.randomElement()!
+        backgroundColor = .random
     }
-
+    
 }
