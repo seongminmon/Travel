@@ -12,12 +12,14 @@ class TravelViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    var list: [Travel] = TravelInfo().travel
+    var list: [Travel] = TravelInfo.travel
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "도시 상세 정보"
+        
+        configureTableView()
     }
     
     func configureTableView() {
@@ -34,7 +36,7 @@ class TravelViewController: UIViewController {
 extension TravelViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return list[indexPath.row].ad ? 80 : 150
+        return list[indexPath.row].ad ? UITableView.automaticDimension : 150
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -60,7 +62,7 @@ extension TravelViewController: UITableViewDataSource {
                 for: indexPath
             ) as! TravelTableViewCell
             
-            cell.configure(data: data)
+            cell.configureCell(data: data)
             cell.likeButton.addTarget(
                 self,
                 action: #selector(likeButtonTapped),

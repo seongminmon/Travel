@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 class TravelTableViewCell: UITableViewCell {
 
@@ -32,15 +33,11 @@ class TravelTableViewCell: UITableViewCell {
         likeButton.tintColor = .white
     }
     
-    func configure(data: Travel) {
+    func configureCell(data: Travel) {
         titleLabel.text = data.title
         descriptionLabel.text = data.description
-        rateLabel.text = "⭐️ \(data.grade!) · 저장 \(data.save!.formatted())"
-        
-        let url = URL(string: data.travel_image!)
-        mainImageView.kf.setImage(with: url)
-        
-        let buttonImage = data.like! ? UIImage(systemName: "heart.fill") : UIImage(systemName: "heart")
-        likeButton.setImage(buttonImage, for: .normal)
+        rateLabel.text = data.rateText
+        mainImageView.kf.setImage(with: data.imageURL)
+        likeButton.setImage(data.buttonImage, for: .normal)
     }
 }
