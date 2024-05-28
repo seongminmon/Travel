@@ -60,8 +60,12 @@ extension TravelViewController: UITableViewDataSource {
                 for: indexPath
             ) as! TravelTableViewCell
             
-            cell.configure(data: data)        
-            cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+            cell.configure(data: data)
+            cell.likeButton.addTarget(
+                self,
+                action: #selector(likeButtonTapped),
+                for: .touchUpInside
+            )
             cell.likeButton.tag = indexPath.row
             
             cell.selectionStyle = .none

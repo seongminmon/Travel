@@ -23,7 +23,7 @@ struct Magazine {
 }
 
 struct MagazineInfo {
-  let magazine: [Magazine] = [
+  static let magazine: [Magazine] = [
     Magazine(
         title: "유럽 여행 쇼핑 성지, OOO은 꼭 가세요!",
         subtitle: "유럽의 인기 쇼핑 명소 총정리",
