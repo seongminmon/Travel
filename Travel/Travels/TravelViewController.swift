@@ -22,7 +22,7 @@ class TravelViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.rowHeight = 120
+//        tableView.rowHeight = 120
         
         let travelCell = UINib(nibName: "TravelTableViewCell", bundle: nil)
         tableView.register(travelCell, forCellReuseIdentifier: "TravelTableViewCell")
@@ -32,6 +32,11 @@ class TravelViewController: UIViewController {
 }
 
 extension TravelViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return list[indexPath.row].ad ? 80 : 150
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }

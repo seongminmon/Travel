@@ -99,9 +99,9 @@
 		24BBED402C04AE2C00567F66 /* Magazines */ = {
 			isa = PBXGroup;
 			children = (
+				243101962C020F6900E19C97 /* MagazineInfo.swift */,
 				2431019A2C02103800E19C97 /* MagazineTableViewController.swift */,
 				2431019C2C02126600E19C97 /* MagazineTableViewCell.swift */,
-				243101962C020F6900E19C97 /* MagazineInfo.swift */,
 			);
 			path = Magazines;
 			sourceTree = "<group>";
@@ -109,9 +109,9 @@
 		24BBED412C04AE3A00567F66 /* Restaurants */ = {
 			isa = PBXGroup;
 			children = (
+				243101972C020F6900E19C97 /* Restaurant.swift */,
 				243101A32C0305BD00E19C97 /* RestaurantTableViewController.swift */,
 				243101A12C0305AE00E19C97 /* RestaurantTableViewCell.swift */,
-				243101972C020F6900E19C97 /* Restaurant.swift */,
 			);
 			path = Restaurants;
 			sourceTree = "<group>";
@@ -119,12 +119,12 @@
 		24BBED422C04AE4D00567F66 /* Travels */ = {
 			isa = PBXGroup;
 			children = (
+				2494447C2C04879100AEBAB4 /* TravelModel.swift */,
 				24BBED342C04AC1500567F66 /* TravelViewController.swift */,
 				24BBED362C04AC7F00567F66 /* TravelTableViewCell.swift */,
 				24BBED372C04AC7F00567F66 /* TravelTableViewCell.xib */,
 				24BBED432C04B63400567F66 /* AdTableViewCell.swift */,
 				24BBED442C04B63400567F66 /* AdTableViewCell.xib */,
-				2494447C2C04879100AEBAB4 /* TravelModel.swift */,
 			);
 			path = Travels;
 			sourceTree = "<group>";
