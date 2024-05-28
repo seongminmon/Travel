@@ -6,7 +6,7 @@
 //  Created by Den on 5/20/24.
 //
 
-import Foundation
+import UIKit
 
 struct Restaurant {
     let image: String
@@ -18,10 +18,19 @@ struct Restaurant {
     let category: String
     let price: Int
     let type: Int
+    let buttonImage: UIImage = Bool.random() ? UIImage(systemName: "heart")! : UIImage(systemName: "heart.fill")!
+    
+    var imageURL: URL? {
+        return URL(string: image)
+    }
+    
+    var priceText: String {
+        return price.formatted() + "원"
+    }
 }
 
 struct RestaurantList {
-    let restaurantArray: [Restaurant] = [
+    static let restaurantArray: [Restaurant] = [
         Restaurant(
             image: "https://search.pstatic.net/common/?src=https%3A%2F%2Fldb-phinf.pstatic.net%2F20170712_44%2F1499829806371zeBdS_JPEG%2FIMG_1167.jpg",
             latitude: 37.514746,

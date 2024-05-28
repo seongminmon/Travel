@@ -1,25 +1,87 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17150" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17122"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Restaurant View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" sceneMemberID="viewController">
+                <viewController id="Y6W-OH-hqX" customClass="RestaurantViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="knj-d7-rjc">
+                                <rect key="frame" x="16" y="63" width="361" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="0QF-eL-c8o"/>
+                                </connections>
+                            </searchBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mel-j0-abp">
+                                <rect key="frame" x="16" y="123" width="46" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="7Sb-0w-jXh"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e1L-mQ-Ig8">
+                                <rect key="frame" x="66" y="123" width="46" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="8N9-vC-isB"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="557-De-cRV">
+                                <rect key="frame" x="116" y="123" width="46" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="coX-E0-j8F"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Button"/>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="o8h-Ir-7Uu">
+                                <rect key="frame" x="0.0" y="167" width="393" height="651"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="o8h-Ir-7Uu" firstAttribute="top" secondItem="Mel-j0-abp" secondAttribute="bottom" constant="8" id="3yf-am-YdN"/>
+                            <constraint firstItem="o8h-Ir-7Uu" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="7zX-Nq-qlm"/>
+                            <constraint firstItem="knj-d7-rjc" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="A1f-g8-8Zi"/>
+                            <constraint firstItem="knj-d7-rjc" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="4" id="BoB-Mg-gfR"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="o8h-Ir-7Uu" secondAttribute="trailing" id="HNA-Fp-lwl"/>
+                            <constraint firstItem="557-De-cRV" firstAttribute="leading" secondItem="e1L-mQ-Ig8" secondAttribute="trailing" constant="4" id="Hf8-Ck-Qmj"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="knj-d7-rjc" secondAttribute="trailing" constant="16" id="S66-W2-C6C"/>
+                            <constraint firstItem="e1L-mQ-Ig8" firstAttribute="top" secondItem="knj-d7-rjc" secondAttribute="bottom" constant="4" id="ZE3-JM-tER"/>
+                            <constraint firstItem="557-De-cRV" firstAttribute="top" secondItem="knj-d7-rjc" secondAttribute="bottom" constant="4" id="a7v-ag-ygf"/>
+                            <constraint firstItem="Mel-j0-abp" firstAttribute="top" secondItem="knj-d7-rjc" secondAttribute="bottom" constant="4" id="esA-F3-Nnn"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="o8h-Ir-7Uu" secondAttribute="bottom" id="gm8-y7-ghu"/>
+                            <constraint firstItem="Mel-j0-abp" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="16" id="qtS-fE-u6O"/>
+                            <constraint firstItem="e1L-mQ-Ig8" firstAttribute="leading" secondItem="Mel-j0-abp" secondAttribute="trailing" constant="4" id="vTP-Tt-cBB"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="firstFilterButton" destination="Mel-j0-abp" id="MFL-GK-nvp"/>
+                        <outlet property="searchBar" destination="knj-d7-rjc" id="3yP-0s-Kpw"/>
+                        <outlet property="secondFilterButton" destination="e1L-mQ-Ig8" id="c3p-y1-Cci"/>
+                        <outlet property="tableView" destination="o8h-Ir-7Uu" id="Qdz-yg-D8h"/>
+                        <outlet property="thirdFilterButton" destination="557-De-cRV" id="MZw-fj-INt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="132" y="-34"/>
         </scene>
     </scenes>
     <resources>
