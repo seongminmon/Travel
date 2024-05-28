@@ -12,10 +12,12 @@ class TravelViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
     
-    let list: [Travel] = TravelInfo().travel
+    var list: [Travel] = TravelInfo().travel
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "도시 상세 정보"
         
         tableView.dataSource = self
         tableView.delegate = self
@@ -53,11 +55,18 @@ extension TravelViewController: UITableViewDataSource {
                 for: indexPath
             ) as! TravelTableViewCell
             
-            cell.configure(data: data)
+            cell.configure(data: data)        
+            cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
+            cell.likeButton.tag = indexPath.row
             
             cell.selectionStyle = .none
             return cell
         }
+    }
+    
+    @objc func likeButtonTapped(sender: UIButton) {
+        list[sender.tag].like?.toggle()
+        tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
     }
 }
 

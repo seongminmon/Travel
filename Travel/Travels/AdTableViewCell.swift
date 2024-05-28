@@ -23,6 +23,7 @@ class AdTableViewCell: UITableViewCell {
         
         markLabel.font = .systemFont(ofSize: 16)
         markLabel.textAlignment = .center
+        markLabel.textColor = .black
         markLabel.backgroundColor = .white
         markLabel.clipsToBounds = true
         markLabel.layer.cornerRadius = 5
