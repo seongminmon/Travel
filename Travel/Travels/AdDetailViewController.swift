@@ -27,5 +27,4 @@ class AdDetailViewController: UIViewController {
     @objc func closeButtonClicked() {
         dismiss(animated: true)
     }
-    
 }

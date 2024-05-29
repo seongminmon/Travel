@@ -20,6 +20,11 @@
 		24419E542C06DFD8008CB43C /* AdDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419E532C06DFD8008CB43C /* AdDetailViewController.swift */; };
 		24419E562C06DFE3008CB43C /* TravelDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419E552C06DFE3008CB43C /* TravelDetailViewController.swift */; };
 		24419E592C06FE74008CB43C /* CityInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419E582C06FE74008CB43C /* CityInfo.swift */; };
+		24419E5B2C070046008CB43C /* City.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24419E5A2C070046008CB43C /* City.storyboard */; };
+		24419E5D2C070144008CB43C /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419E5C2C070144008CB43C /* CityViewController.swift */; };
+		24419E602C071146008CB43C /* CityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24419E5F2C071146008CB43C /* CityCell.xib */; };
+		24419E612C071146008CB43C /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419E5E2C071146008CB43C /* CityCell.swift */; };
+		24419E632C072695008CB43C /* UIView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419E622C072694008CB43C /* UIView+.swift */; };
 		2494447D2C04879200AEBAB4 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2494447C2C04879100AEBAB4 /* TravelModel.swift */; };
 		249A053B2C05D0200074D224 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249A053A2C05D0200074D224 /* UIColor+.swift */; };
 		24BBED352C04AC1500567F66 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BBED342C04AC1500567F66 /* TravelViewController.swift */; };
@@ -53,6 +58,11 @@
 		24419E532C06DFD8008CB43C /* AdDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdDetailViewController.swift; sourceTree = "<group>"; };
 		24419E552C06DFE3008CB43C /* TravelDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDetailViewController.swift; sourceTree = "<group>"; };
 		24419E582C06FE74008CB43C /* CityInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityInfo.swift; sourceTree = "<group>"; };
+		24419E5A2C070046008CB43C /* City.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = City.storyboard; sourceTree = "<group>"; };
+		24419E5C2C070144008CB43C /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
+		24419E5E2C071146008CB43C /* CityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityCell.swift; sourceTree = "<group>"; };
+		24419E5F2C071146008CB43C /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
+		24419E622C072694008CB43C /* UIView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+.swift"; sourceTree = "<group>"; };
 		2494447C2C04879100AEBAB4 /* TravelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		249A053A2C05D0200074D224 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		24BBED342C04AC1500567F66 /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
@@ -122,6 +132,10 @@
 			isa = PBXGroup;
 			children = (
 				24419E582C06FE74008CB43C /* CityInfo.swift */,
+				24419E5C2C070144008CB43C /* CityViewController.swift */,
+				24419E5E2C071146008CB43C /* CityCell.swift */,
+				24419E5F2C071146008CB43C /* CityCell.xib */,
+				24419E5A2C070046008CB43C /* City.storyboard */,
 			);
 			path = City;
 			sourceTree = "<group>";
@@ -131,6 +145,7 @@
 			children = (
 				24419E4D2C05D2E1008CB43C /* CGFloat+.swift */,
 				249A053A2C05D0200074D224 /* UIColor+.swift */,
+				24419E622C072694008CB43C /* UIView+.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -239,11 +254,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24419E5B2C070046008CB43C /* City.storyboard in Resources */,
 				24BBED462C04B63400567F66 /* AdTableViewCell.xib in Resources */,
 				2431018C2C020F0800E19C97 /* Assets.xcassets in Resources */,
 				24BBED872C05B93700567F66 /* Restaurant.storyboard in Resources */,
 				24BBED392C04AC7F00567F66 /* TravelTableViewCell.xib in Resources */,
 				2431018F2C020F0800E19C97 /* Base in Resources */,
+				24419E602C071146008CB43C /* CityCell.xib in Resources */,
 				24BBED8E2C05BB0100567F66 /* MagazineCell.xib in Resources */,
 				24BBED852C05B92C00567F66 /* Magazine.storyboard in Resources */,
 				24BBED892C05B94100567F66 /* Travel.storyboard in Resources */,
@@ -261,12 +278,14 @@
 			files = (
 				24BBED972C05C1FB00567F66 /* RestaurantCell.swift in Sources */,
 				24BBED8B2C05BAAF00567F66 /* MagazineViewController.swift in Sources */,
+				24419E612C071146008CB43C /* CityCell.swift in Sources */,
 				243101992C020F6900E19C97 /* Restaurant.swift in Sources */,
 				24BBED8F2C05BB0100567F66 /* MagazineCell.swift in Sources */,
 				24419E4E2C05D2E1008CB43C /* CGFloat+.swift in Sources */,
 				24BBED382C04AC7F00567F66 /* TravelTableViewCell.swift in Sources */,
 				243101872C020F0600E19C97 /* ViewController.swift in Sources */,
 				243101982C020F6900E19C97 /* MagazineInfo.swift in Sources */,
+				24419E632C072695008CB43C /* UIView+.swift in Sources */,
 				2494447D2C04879200AEBAB4 /* TravelModel.swift in Sources */,
 				24BBED912C05BEE600567F66 /* RestaurantViewController.swift in Sources */,
 				24419E562C06DFE3008CB43C /* TravelDetailViewController.swift in Sources */,
@@ -276,6 +295,7 @@
 				24BBED352C04AC1500567F66 /* TravelViewController.swift in Sources */,
 				24419E542C06DFD8008CB43C /* AdDetailViewController.swift in Sources */,
 				24419E592C06FE74008CB43C /* CityInfo.swift in Sources */,
+				24419E5D2C070144008CB43C /* CityViewController.swift in Sources */,
 				249A053B2C05D0200074D224 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
