@@ -39,6 +39,64 @@
             </objects>
             <point key="canvasLocation" x="132" y="-34"/>
         </scene>
+        <!--Travel Detail View Controller-->
+        <scene sceneID="Ajy-II-vjd">
+            <objects>
+                <viewController storyboardIdentifier="TravelDetailViewController" id="jbR-kr-uI7" customClass="TravelDetailViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k7x-sK-EDw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관광지 화면" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeF-O2-CWS">
+                                <rect key="frame" x="40" y="99" width="313" height="679"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Llh-yl-wJg"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VeF-O2-CWS" firstAttribute="leading" secondItem="Llh-yl-wJg" secondAttribute="leading" constant="40" id="3pY-In-9z3"/>
+                            <constraint firstItem="Llh-yl-wJg" firstAttribute="trailing" secondItem="VeF-O2-CWS" secondAttribute="trailing" constant="40" id="B19-2V-EQN"/>
+                            <constraint firstItem="VeF-O2-CWS" firstAttribute="top" secondItem="Llh-yl-wJg" secondAttribute="top" constant="40" id="Qck-3b-AbO"/>
+                            <constraint firstItem="Llh-yl-wJg" firstAttribute="bottom" secondItem="VeF-O2-CWS" secondAttribute="bottom" constant="40" id="i6T-tf-nbm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bl8-dh-4Mj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1160" y="-194"/>
+        </scene>
+        <!--Ad Detail View Controller-->
+        <scene sceneID="wSv-Sx-zLh">
+            <objects>
+                <viewController storyboardIdentifier="AdDetailViewController" id="h8Z-Nf-lGX" customClass="AdDetailViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="wAU-L1-SxX">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광고 화면" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y86-OU-1yv">
+                                <rect key="frame" x="40" y="99" width="313" height="679"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="tbC-ew-WZJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tbC-ew-WZJ" firstAttribute="trailing" secondItem="y86-OU-1yv" secondAttribute="trailing" constant="40" id="P0C-iA-mwA"/>
+                            <constraint firstItem="y86-OU-1yv" firstAttribute="top" secondItem="tbC-ew-WZJ" secondAttribute="top" constant="40" id="VTa-g3-BLt"/>
+                            <constraint firstItem="tbC-ew-WZJ" firstAttribute="bottom" secondItem="y86-OU-1yv" secondAttribute="bottom" constant="40" id="sF2-eg-2dI"/>
+                            <constraint firstItem="y86-OU-1yv" firstAttribute="leading" secondItem="tbC-ew-WZJ" secondAttribute="leading" constant="40" id="z5K-HN-8l3"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="A80-NE-guU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1193" y="512"/>
+        </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
