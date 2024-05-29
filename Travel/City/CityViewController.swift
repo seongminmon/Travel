@@ -9,6 +9,8 @@ import UIKit
 
 class CityViewController: UIViewController {
 
+    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet var segment: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
     
     let list: [City] = CityInfo.city
@@ -19,7 +21,26 @@ class CityViewController: UIViewController {
         
         navigationItem.title = "인기 도시"
         
+        configureSegment()
         configureTableView()
+    }
+    
+    func configureSegment() {
+        segment.addTarget(self, action: #selector(segmentValueChanged), for: .valueChanged)
+    }
+    
+    @objc func segmentValueChanged(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            selectedList = list
+        case 1:
+            selectedList = list.filter { $0.domestic_travel }
+        case 2:
+            selectedList = list.filter { !$0.domestic_travel }
+        default:
+            break
+        }
+        tableView.reloadData()
     }
 
     func configureTableView() {

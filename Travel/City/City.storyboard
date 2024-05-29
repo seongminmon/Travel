@@ -18,26 +18,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GVz-L9-5fK">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="162" width="393" height="656"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O59-y6-tsK">
+                                <rect key="frame" x="20" y="123" width="353" height="32"/>
+                                <segments>
+                                    <segment title="모두"/>
+                                    <segment title="국내"/>
+                                    <segment title="해외"/>
+                                </segments>
+                            </segmentedControl>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="bWy-iy-axT">
+                                <rect key="frame" x="0.0" y="59" width="393" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="Y6W-OH-hqX" id="jMg-oW-Fl6"/>
+                                </connections>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="GVz-L9-5fK" secondAttribute="trailing" id="3Gq-il-zMn"/>
+                            <constraint firstItem="bWy-iy-axT" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="K6F-LI-HAj"/>
                             <constraint firstItem="GVz-L9-5fK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="Kbc-IM-pBP"/>
-                            <constraint firstItem="GVz-L9-5fK" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="Lct-yy-0j4"/>
+                            <constraint firstItem="GVz-L9-5fK" firstAttribute="top" secondItem="O59-y6-tsK" secondAttribute="bottom" constant="8" id="Soj-DD-OxI"/>
+                            <constraint firstItem="bWy-iy-axT" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="YgV-PQ-e3z"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="GVz-L9-5fK" secondAttribute="bottom" id="baj-SZ-NRG"/>
+                            <constraint firstItem="O59-y6-tsK" firstAttribute="top" secondItem="bWy-iy-axT" secondAttribute="bottom" constant="8" id="cZK-dc-4Iy"/>
+                            <constraint firstItem="O59-y6-tsK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="kJS-V8-xzm"/>
+                            <constraint firstItem="bWy-iy-axT" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="llU-eJ-wjO"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="O59-y6-tsK" secondAttribute="trailing" constant="20" id="siJ-kx-K45"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="searchBar" destination="bWy-iy-axT" id="VeM-jU-UKc"/>
+                        <outlet property="segment" destination="O59-y6-tsK" id="qke-6V-HxM"/>
                         <outlet property="tableView" destination="GVz-L9-5fK" id="eq2-z8-GRS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="131" y="-28"/>
+            <point key="canvasLocation" x="130.53435114503816" y="-28.169014084507044"/>
         </scene>
     </scenes>
     <resources>
