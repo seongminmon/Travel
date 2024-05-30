@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MapKit
 
 struct Restaurant {
     let image: String
@@ -26,6 +27,10 @@ struct Restaurant {
     
     var priceText: String {
         return price.formatted() + "원"
+    }
+    
+    var location: CLLocationCoordinate2D {
+        return CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
 }
 

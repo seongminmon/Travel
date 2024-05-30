@@ -100,6 +100,7 @@ extension RestaurantViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension RestaurantViewController: UISearchBarDelegate {
+    
     // 실시간 검색
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)

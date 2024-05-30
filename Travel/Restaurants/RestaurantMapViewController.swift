@@ -67,8 +67,7 @@ class RestaurantMapViewController: UIViewController {
         mapView.delegate = self
         
         // 처음 위치는 모든 식당 중 랜덤
-        let start = totalList.randomElement()!
-        let center = CLLocationCoordinate2D(latitude: start.latitude, longitude: start.longitude)
+        let center = totalList.randomElement()!.location
         mapView.region = MKCoordinateRegion(center: center, latitudinalMeters: 1000, longitudinalMeters: 1000)
         
         // 처음 어노테이션은 전체 선택
@@ -76,15 +75,13 @@ class RestaurantMapViewController: UIViewController {
     }
     
     func makeAnnotation(_ selectedList: [Restaurant]) {
-        
         // 모든 어노테이션 삭제
         mapView.removeAnnotations(mapView.annotations)
         
         // 선택된 리스트에서 어노테이션 추가
         for item in selectedList {
-            let location = CLLocationCoordinate2D(latitude: item.latitude, longitude: item.longitude)
             let annotation = MKPointAnnotation()
-            annotation.coordinate = location
+            annotation.coordinate = item.location
             annotation.title = item.name
             mapView.addAnnotation(annotation)
         }
