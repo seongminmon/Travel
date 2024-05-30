@@ -47,9 +47,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="관광지 화면" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VeF-O2-CWS">
-                                <rect key="frame" x="40" y="99" width="313" height="679"/>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="qnn-5R-3me">
+                                <rect key="frame" x="20" y="79" width="353" height="353"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qnn-5R-3me" secondAttribute="height" id="BYh-Z2-6SY"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nZl-jZ-0VW">
+                                <rect key="frame" x="20" y="452" width="353" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mBP-4C-e4d">
+                                <rect key="frame" x="20" y="492.33333333333331" width="353" height="20.333333333333314"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EcL-jc-0HL">
+                                <rect key="frame" x="20" y="532.66666666666663" width="353" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -57,16 +75,30 @@
                         <viewLayoutGuide key="safeArea" id="Llh-yl-wJg"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VeF-O2-CWS" firstAttribute="leading" secondItem="Llh-yl-wJg" secondAttribute="leading" constant="40" id="3pY-In-9z3"/>
-                            <constraint firstItem="Llh-yl-wJg" firstAttribute="trailing" secondItem="VeF-O2-CWS" secondAttribute="trailing" constant="40" id="B19-2V-EQN"/>
-                            <constraint firstItem="VeF-O2-CWS" firstAttribute="top" secondItem="Llh-yl-wJg" secondAttribute="top" constant="40" id="Qck-3b-AbO"/>
-                            <constraint firstItem="Llh-yl-wJg" firstAttribute="bottom" secondItem="VeF-O2-CWS" secondAttribute="bottom" constant="40" id="i6T-tf-nbm"/>
+                            <constraint firstItem="Llh-yl-wJg" firstAttribute="trailing" secondItem="nZl-jZ-0VW" secondAttribute="trailing" constant="20" id="8Yt-SE-qkj"/>
+                            <constraint firstItem="qnn-5R-3me" firstAttribute="top" secondItem="Llh-yl-wJg" secondAttribute="top" constant="20" id="BO4-Wz-p8D"/>
+                            <constraint firstItem="mBP-4C-e4d" firstAttribute="leading" secondItem="Llh-yl-wJg" secondAttribute="leading" constant="20" id="Cfq-DV-9kf"/>
+                            <constraint firstItem="Llh-yl-wJg" firstAttribute="trailing" secondItem="mBP-4C-e4d" secondAttribute="trailing" constant="20" id="Uj4-8D-B3T"/>
+                            <constraint firstItem="EcL-jc-0HL" firstAttribute="leading" secondItem="Llh-yl-wJg" secondAttribute="leading" constant="20" id="e30-ud-J7F"/>
+                            <constraint firstItem="mBP-4C-e4d" firstAttribute="top" secondItem="nZl-jZ-0VW" secondAttribute="bottom" constant="20" id="fiE-AB-Y1h"/>
+                            <constraint firstItem="nZl-jZ-0VW" firstAttribute="top" secondItem="qnn-5R-3me" secondAttribute="bottom" constant="20" id="gRu-Vh-xpt"/>
+                            <constraint firstItem="Llh-yl-wJg" firstAttribute="trailing" secondItem="qnn-5R-3me" secondAttribute="trailing" constant="20" id="jy4-ET-L3A"/>
+                            <constraint firstItem="qnn-5R-3me" firstAttribute="leading" secondItem="Llh-yl-wJg" secondAttribute="leading" constant="20" id="kk6-P1-s6I"/>
+                            <constraint firstItem="EcL-jc-0HL" firstAttribute="top" secondItem="mBP-4C-e4d" secondAttribute="bottom" constant="20" id="mYS-TG-EgO"/>
+                            <constraint firstItem="Llh-yl-wJg" firstAttribute="trailing" secondItem="EcL-jc-0HL" secondAttribute="trailing" constant="20" id="pBI-Qy-FcQ"/>
+                            <constraint firstItem="nZl-jZ-0VW" firstAttribute="leading" secondItem="Llh-yl-wJg" secondAttribute="leading" constant="20" id="rBt-kD-3ng"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="descriptionLabel" destination="mBP-4C-e4d" id="YOZ-GA-aBY"/>
+                        <outlet property="mainImageView" destination="qnn-5R-3me" id="F1X-fx-yfp"/>
+                        <outlet property="rateLabel" destination="EcL-jc-0HL" id="GMy-i2-cd1"/>
+                        <outlet property="titleLabel" destination="nZl-jZ-0VW" id="dam-nJ-ci0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bl8-dh-4Mj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="987" y="-35"/>
+            <point key="canvasLocation" x="985.49618320610682" y="-35.211267605633807"/>
         </scene>
         <!--Ad Detail View Controller-->
         <scene sceneID="wSv-Sx-zLh">
@@ -92,6 +124,9 @@
                             <constraint firstItem="y86-OU-1yv" firstAttribute="leading" secondItem="tbC-ew-WZJ" secondAttribute="leading" constant="40" id="z5K-HN-8l3"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="mainLabel" destination="y86-OU-1yv" id="zyA-Mv-fxk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A80-NE-guU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

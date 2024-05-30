@@ -9,6 +9,10 @@ import UIKit
 
 class AdDetailViewController: UIViewController {
 
+    @IBOutlet var mainLabel: UILabel!
+    
+    var data: Travel?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +26,9 @@ class AdDetailViewController: UIViewController {
         )
         left.tintColor = .black
         navigationItem.leftBarButtonItem = left
+        
+        mainLabel.text = data?.title
+        mainLabel.numberOfLines = 0
     }
     
     @objc func closeButtonClicked() {

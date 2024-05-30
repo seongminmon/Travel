@@ -89,10 +89,12 @@ extension TravelViewController: UITableViewDelegate {
             let vc = sb.instantiateViewController(withIdentifier: "AdDetailViewController") as! AdDetailViewController
             let nav = UINavigationController(rootViewController: vc)
             nav.modalPresentationStyle = .fullScreen
+            vc.data = data
             present(nav, animated: true)
         } else {
             let sb = UIStoryboard(name: "Travel", bundle: nil)
             let vc = sb.instantiateViewController(withIdentifier: "TravelDetailViewController") as! TravelDetailViewController
+            vc.data = data
             navigationController?.pushViewController(vc, animated: true)
         }
         

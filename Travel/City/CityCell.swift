@@ -40,7 +40,7 @@ class CityCell: UITableViewCell {
         
         backView.backgroundColor = .black
         backView.layer.opacity = 0.7
-//        backView.alpha = 0.8
+//        backView.alpha = 0.5
         
         descriptionLabel.font = .systemFont(ofSize: 16)
         descriptionLabel.textColor = .white
