@@ -119,12 +119,11 @@
 				243101822C020F0600E19C97 /* AppDelegate.swift */,
 				243101842C020F0600E19C97 /* SceneDelegate.swift */,
 				243101862C020F0600E19C97 /* ViewController.swift */,
-				243101882C020F0600E19C97 /* Main.storyboard */,
 				249A053C2C05D0260074D224 /* Extension */,
-				24BBED402C04AE2C00567F66 /* Magazines */,
-				24BBED412C04AE3A00567F66 /* Restaurants */,
-				24BBED422C04AE4D00567F66 /* Travels */,
-				24419E572C06FE5E008CB43C /* City */,
+				24419E712C08758D008CB43C /* Protocol */,
+				24419E722C0875B7008CB43C /* Models */,
+				24419E732C0875F0008CB43C /* Scenes */,
+				24419E742C0875FB008CB43C /* Storyboard */,
 				2431018B2C020F0800E19C97 /* Assets.xcassets */,
 				2431018D2C020F0800E19C97 /* LaunchScreen.storyboard */,
 				243101902C020F0800E19C97 /* Info.plist */,
@@ -135,13 +134,53 @@
 		24419E572C06FE5E008CB43C /* City */ = {
 			isa = PBXGroup;
 			children = (
-				24419E5A2C070046008CB43C /* City.storyboard */,
-				24419E582C06FE74008CB43C /* CityInfo.swift */,
 				24419E5C2C070144008CB43C /* CityViewController.swift */,
 				24419E5E2C071146008CB43C /* CityCell.swift */,
 				24419E5F2C071146008CB43C /* CityCell.xib */,
 			);
 			path = City;
+			sourceTree = "<group>";
+		};
+		24419E712C08758D008CB43C /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				24419E6F2C08723A008CB43C /* IdentifierProtocol.swift */,
+			);
+			path = Protocol;
+			sourceTree = "<group>";
+		};
+		24419E722C0875B7008CB43C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				243101962C020F6900E19C97 /* MagazineInfo.swift */,
+				243101972C020F6900E19C97 /* Restaurant.swift */,
+				2494447C2C04879100AEBAB4 /* TravelModel.swift */,
+				24419E582C06FE74008CB43C /* CityInfo.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		24419E732C0875F0008CB43C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				24BBED402C04AE2C00567F66 /* Magazines */,
+				24BBED412C04AE3A00567F66 /* Restaurants */,
+				24BBED422C04AE4D00567F66 /* Travels */,
+				24419E572C06FE5E008CB43C /* City */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		24419E742C0875FB008CB43C /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				243101882C020F0600E19C97 /* Main.storyboard */,
+				24BBED842C05B92C00567F66 /* Magazine.storyboard */,
+				24BBED862C05B93700567F66 /* Restaurant.storyboard */,
+				24BBED882C05B94100567F66 /* Travel.storyboard */,
+				24419E5A2C070046008CB43C /* City.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 		249A053C2C05D0260074D224 /* Extension */ = {
@@ -150,7 +189,6 @@
 				24419E4D2C05D2E1008CB43C /* CGFloat+.swift */,
 				249A053A2C05D0200074D224 /* UIColor+.swift */,
 				24419E622C072694008CB43C /* UIView+.swift */,
-				24419E6F2C08723A008CB43C /* IdentifierProtocol.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -158,8 +196,6 @@
 		24BBED402C04AE2C00567F66 /* Magazines */ = {
 			isa = PBXGroup;
 			children = (
-				24BBED842C05B92C00567F66 /* Magazine.storyboard */,
-				243101962C020F6900E19C97 /* MagazineInfo.swift */,
 				24BBED8A2C05BAAF00567F66 /* MagazineViewController.swift */,
 				24BBED8C2C05BB0100567F66 /* MagazineCell.swift */,
 				24BBED8D2C05BB0100567F66 /* MagazineCell.xib */,
@@ -170,8 +206,6 @@
 		24BBED412C04AE3A00567F66 /* Restaurants */ = {
 			isa = PBXGroup;
 			children = (
-				24BBED862C05B93700567F66 /* Restaurant.storyboard */,
-				243101972C020F6900E19C97 /* Restaurant.swift */,
 				24BBED902C05BEE600567F66 /* RestaurantViewController.swift */,
 				24419E6D2C0864F6008CB43C /* RestaurantMapViewController.swift */,
 				24BBED942C05C1FB00567F66 /* RestaurantCell.swift */,
@@ -183,8 +217,6 @@
 		24BBED422C04AE4D00567F66 /* Travels */ = {
 			isa = PBXGroup;
 			children = (
-				24BBED882C05B94100567F66 /* Travel.storyboard */,
-				2494447C2C04879100AEBAB4 /* TravelModel.swift */,
 				24BBED342C04AC1500567F66 /* TravelViewController.swift */,
 				24BBED362C04AC7F00567F66 /* TravelTableViewCell.swift */,
 				24BBED372C04AC7F00567F66 /* TravelTableViewCell.xib */,
