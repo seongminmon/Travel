@@ -8,7 +8,8 @@
 import UIKit
 import Kingfisher
 
-class CityCell: UITableViewCell {
+class CityCell: UITableViewCell, IdentifierProtocol {
+    
     static let identifier = "CityCell"
 
     @IBOutlet var shadowView: UIView!

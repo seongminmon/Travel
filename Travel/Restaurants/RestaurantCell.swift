@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class RestaurantCell: UITableViewCell {
+class RestaurantCell: UITableViewCell, IdentifierProtocol {
     
     static let identifier = "RestaurantCell"
     

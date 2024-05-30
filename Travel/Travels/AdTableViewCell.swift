@@ -7,7 +7,9 @@
 
 import UIKit
 
-class AdTableViewCell: UITableViewCell {
+class AdTableViewCell: UITableViewCell, IdentifierProtocol {
+    
+    static let identifier = "AdTableViewCell"
 
     @IBOutlet var backView: UIView!
     @IBOutlet var mainLabel: UILabel!

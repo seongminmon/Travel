@@ -7,7 +7,9 @@
 
 import UIKit
 
-class TravelDetailViewController: UIViewController {
+class TravelDetailViewController: UIViewController, IdentifierProtocol {
+    
+    static let identifier = "TravelDetailViewController"
     
     @IBOutlet var mainImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!

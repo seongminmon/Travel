@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class MagazineCell: UITableViewCell {
+class MagazineCell: UITableViewCell, IdentifierProtocol {
     
     static let identifier = "MagazineCell"
     
