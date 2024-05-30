@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="4UW-h2-4Ag">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -82,6 +83,36 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="-34"/>
+        </scene>
+        <!--Restaurant Map View Controller-->
+        <scene sceneID="oqG-gZ-G78">
+            <objects>
+                <viewController storyboardIdentifier="RestaurantMapViewController" id="4UW-h2-4Ag" customClass="RestaurantMapViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xpG-s2-ZBU">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59j-Gg-ZRg">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <standardMapConfiguration key="preferredConfiguration"/>
+                            </mapView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="g6b-rJ-Bkk"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="59j-Gg-ZRg" firstAttribute="trailing" secondItem="g6b-rJ-Bkk" secondAttribute="trailing" id="5fr-37-H9o"/>
+                            <constraint firstItem="59j-Gg-ZRg" firstAttribute="bottom" secondItem="g6b-rJ-Bkk" secondAttribute="bottom" id="AnB-cn-Bco"/>
+                            <constraint firstItem="59j-Gg-ZRg" firstAttribute="top" secondItem="g6b-rJ-Bkk" secondAttribute="top" id="MtD-ib-Z8F"/>
+                            <constraint firstItem="59j-Gg-ZRg" firstAttribute="leading" secondItem="g6b-rJ-Bkk" secondAttribute="leading" id="mqV-3i-Nou"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="59j-Gg-ZRg" id="BUf-at-3nF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ryi-85-Ctv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094" y="-35"/>
         </scene>
     </scenes>
     <resources>

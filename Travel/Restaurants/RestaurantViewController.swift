@@ -84,7 +84,7 @@ class RestaurantViewController: UIViewController {
     }
 }
 
-extension RestaurantViewController: UITableViewDataSource {
+extension RestaurantViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return filteredList.count
     }
@@ -97,10 +97,6 @@ extension RestaurantViewController: UITableViewDataSource {
         
         return cell
     }
-}
-
-extension RestaurantViewController: UITableViewDelegate {
-    
 }
 
 extension RestaurantViewController: UISearchBarDelegate {
