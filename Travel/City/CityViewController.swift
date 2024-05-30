@@ -73,11 +73,12 @@ class CityViewController: UIViewController {
     }
     
     func search(searchText: String) {
+        let searchText = searchText.uppercased()
         setSelectedList()
         selectedList = selectedList.filter {
-            $0.city_name.contains(searchText) ||
-            $0.city_english_name.contains(searchText) ||
-            $0.city_explain.contains(searchText)
+            $0.city_name.uppercased().contains(searchText) ||
+            $0.city_english_name.uppercased().contains(searchText) ||
+            $0.city_explain.uppercased().contains(searchText)
         }
         tableView.reloadData()
     }
