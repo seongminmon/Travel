@@ -25,13 +25,15 @@ class MagazineViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.rowHeight = 500
+        
         let xib = UINib(nibName: MagazineCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: MagazineCell.identifier)
     }
     
 }
 
-extension MagazineViewController: UITableViewDataSource {
+extension MagazineViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return list.count
     }
@@ -44,10 +46,4 @@ extension MagazineViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
-}
-
-extension MagazineViewController: UITableViewDelegate {
-    
 }

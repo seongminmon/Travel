@@ -8,9 +8,7 @@
 import UIKit
 import Kingfisher
 
-class TravelTableViewCell: UITableViewCell, IdentifierProtocol {
-    
-    static let identifier = "TravelTableViewCell"
+class TravelTableViewCell: UITableViewCell {
 
     @IBOutlet var mainImageView: UIImageView!
     @IBOutlet var likeButton: UIButton!

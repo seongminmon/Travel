@@ -7,9 +7,7 @@
 
 import UIKit
 
-class AdDetailViewController: UIViewController, IdentifierProtocol {
-    
-    static let identifier = "AdDetailViewController"
+class AdDetailViewController: UIViewController {
 
     @IBOutlet var mainLabel: UILabel!
     

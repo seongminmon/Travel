@@ -9,6 +9,6 @@ import Foundation
 
 extension CGFloat {
     static var random: CGFloat {
-           return CGFloat(arc4random()) / CGFloat(UInt32.max)
+        return CGFloat(arc4random()) / CGFloat(UInt32.max)
     }
 }

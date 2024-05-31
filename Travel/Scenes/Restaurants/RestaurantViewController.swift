@@ -21,13 +21,17 @@ class RestaurantViewController: UIViewController {
         thirdFilterButton
     ]
     
-    let list = RestaurantList.restaurantArray
-    var filteredList: [Restaurant] = []
+    let total = RestaurantList.restaurantArray
+    var list = RestaurantList.restaurantArray {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        filteredList = list
+        navigationItem.title = "식당 검색"
         
         searchBar.delegate = self
         
@@ -46,18 +50,18 @@ class RestaurantViewController: UIViewController {
     }
     
     @objc func firstFilterButtonTapped() {
-        filteredList = list
-        tableView.reloadData()
+        list = total
+        view.endEditing(true)
     }
     
     @objc func secondFilterButtonTapped() {
-        filteredList = list.filter { $0.category == "한식" }
-        tableView.reloadData()
+        list = total.filter { $0.category == "한식" }
+        view.endEditing(true)
     }
     
     @objc func thirdFilterButtonTapped() {
-        filteredList = list.filter { $0.price <= 10000 }
-        tableView.reloadData()
+        list = total.filter { $0.price <= 10000 }
+        view.endEditing(true)
     }
     
     func configureButton(_ button: UIButton) {
@@ -73,6 +77,7 @@ class RestaurantViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.rowHeight = 120
+        tableView.keyboardDismissMode = .onDrag
         
         let xib = UINib(nibName: RestaurantCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: RestaurantCell.identifier)
@@ -86,16 +91,23 @@ class RestaurantViewController: UIViewController {
 
 extension RestaurantViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return filteredList.count
+        return list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: RestaurantCell.identifier, for: indexPath) as! RestaurantCell
         
-        let restaurant = filteredList[indexPath.row]
+        let restaurant = list[indexPath.row]
         cell.configureCell(restaurant)
+        cell.likeButton.tag = indexPath.row
+        cell.likeButton.addTarget(self, action: #selector(likeButtonTapped), for: .touchUpInside)
         
+        cell.selectionStyle = .none
         return cell
+    }
+    
+    @objc func likeButtonTapped(sender: UIButton) {
+        list[sender.tag].like.toggle()
     }
 }
 
@@ -104,7 +116,7 @@ extension RestaurantViewController: UISearchBarDelegate {
     // 실시간 검색
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         print(searchText)
-        filteredList = list.filter { $0.name.contains(searchText) }
+        list = total.filter { $0.name.contains(searchText) }
         tableView.reloadData()
     }
     

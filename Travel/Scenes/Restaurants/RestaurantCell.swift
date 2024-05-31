@@ -8,9 +8,7 @@
 import UIKit
 import Kingfisher
 
-class RestaurantCell: UITableViewCell, IdentifierProtocol {
-    
-    static let identifier = "RestaurantCell"
+class RestaurantCell: UITableViewCell {
     
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var nameLabel: UILabel!

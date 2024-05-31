@@ -8,9 +8,7 @@
 import UIKit
 import Kingfisher
 
-class MagazineCell: UITableViewCell, IdentifierProtocol {
-    
-    static let identifier = "MagazineCell"
+class MagazineCell: UITableViewCell {
     
     @IBOutlet var mainImageView: UIImageView!
     @IBOutlet var titleLabel: UILabel!
@@ -38,11 +36,9 @@ class MagazineCell: UITableViewCell, IdentifierProtocol {
     }
     
     func configureCell(_ magazine: Magazine) {
-        let url = URL(string: magazine.photo_image)
-        mainImageView.kf.setImage(with: url)
+        mainImageView.kf.setImage(with: magazine.imageUrl)
         titleLabel.text = magazine.title
         descriptionLabel.text = magazine.subtitle
         dateLabel.text = magazine.dateString
     }
-    
 }

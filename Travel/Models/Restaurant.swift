@@ -19,7 +19,12 @@ struct Restaurant {
     let category: String
     let price: Int
     let type: Int
-    let buttonImage: UIImage = Bool.random() ? UIImage(systemName: "heart")! : UIImage(systemName: "heart.fill")!
+    
+    var like: Bool = false
+    
+    var buttonImage: UIImage {
+        return like ? UIImage(systemName: "heart.fill")! : UIImage(systemName: "heart")!
+    }
     
     var imageURL: URL? {
         return URL(string: image)

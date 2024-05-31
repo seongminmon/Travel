@@ -8,9 +8,7 @@
 import UIKit
 import Kingfisher
 
-class CityCell: UITableViewCell, IdentifierProtocol {
-    
-    static let identifier = "CityCell"
+class CityCell: UITableViewCell {
 
     @IBOutlet var shadowView: UIView!
     @IBOutlet var imageBackView: UIView!
@@ -32,7 +30,9 @@ class CityCell: UITableViewCell, IdentifierProtocol {
         shadowView.layer.shadowRadius = 20
         shadowView.layer.shadowOffset = CGSize(width: 5, height: 5)
         
-        imageBackView.roundCorners(cornerRadius: 20, maskedCorners: [.layerMinXMinYCorner, .layerMaxXMaxYCorner])
+        imageBackView.clipsToBounds = true
+        imageBackView.layer.cornerRadius = 20
+        imageBackView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
         
         mainImageView.contentMode = .scaleAspectFill
         

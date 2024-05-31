@@ -20,6 +20,10 @@ struct Magazine {
         dateformatter.dateFormat = "yyyy년 MM월 dd일"
         return dateformatter.string(from: convertDate)
     }
+    
+    var imageUrl: URL? {
+        return URL(string: photo_image)
+    }
 }
 
 struct MagazineInfo {
