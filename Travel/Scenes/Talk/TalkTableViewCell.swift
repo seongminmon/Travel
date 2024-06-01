@@ -36,6 +36,6 @@ class TalkTableViewCell: UITableViewCell {
         profileImageView.image = UIImage(named: imageName)
         nameLabel.text = data.chatroomName
         contentsLabel.text = data.chatList.last?.message
-        dateLabel.text = data.chatList.last?.date
+        dateLabel.text = data.chatList.last?.talkDateString
     }
 }

@@ -27,6 +27,26 @@ struct Chat {
     let user: User
     let date: String
     let message: String
+    
+    var realDate: Date {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd hh:mm"
+        return formatter.date(from: date) ?? Date()
+    }
+    
+    var talkDateString: String {
+        // 2024-06-12 19:30 -> 24.06.12
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yy.MM.dd"
+        return formatter.string(from: realDate)
+    }
+    
+    var chatDateString: String {
+        // 2024-06-12 19:30 -> 07:30 오후
+        let formatter = DateFormatter()
+        formatter.dateFormat = "hh:mm a"
+        return formatter.string(from: realDate)
+    }
 }
 
 //트래블톡 화면에서 사용할 데이터 구조체

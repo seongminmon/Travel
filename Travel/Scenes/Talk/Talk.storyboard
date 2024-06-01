@@ -53,8 +53,63 @@
             </objects>
             <point key="canvasLocation" x="132" y="-34"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="1QQ-B1-6tv">
+            <objects>
+                <viewController storyboardIdentifier="ChatViewController" id="J3A-bQ-oo7" customClass="ChatViewController" customModule="Travel" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vlb-hn-B47">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GnP-6q-dJy">
+                                <rect key="frame" x="0.0" y="59" width="393" height="701"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="903-vU-U8s">
+                                <rect key="frame" x="16" y="768" width="361" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="f2U-bc-u2a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ng2-SV-bt5">
+                                <rect key="frame" x="329" y="773" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="jrr-o8-2uf"/>
+                                    <constraint firstAttribute="width" constant="40" id="yoz-fM-ceE"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="arrow.right.circle" catalog="system"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hpr-bD-g9I"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ng2-SV-bt5" firstAttribute="trailing" secondItem="903-vU-U8s" secondAttribute="trailing" constant="-8" id="GQD-eD-RTq"/>
+                            <constraint firstItem="903-vU-U8s" firstAttribute="top" secondItem="GnP-6q-dJy" secondAttribute="bottom" constant="8" id="KDf-52-eKD"/>
+                            <constraint firstItem="Hpr-bD-g9I" firstAttribute="trailing" secondItem="GnP-6q-dJy" secondAttribute="trailing" id="OIO-sr-DDD"/>
+                            <constraint firstItem="ng2-SV-bt5" firstAttribute="centerY" secondItem="903-vU-U8s" secondAttribute="centerY" id="QBx-7W-FNM"/>
+                            <constraint firstItem="Hpr-bD-g9I" firstAttribute="bottom" secondItem="903-vU-U8s" secondAttribute="bottom" id="QQd-O7-gze"/>
+                            <constraint firstItem="GnP-6q-dJy" firstAttribute="leading" secondItem="Hpr-bD-g9I" secondAttribute="leading" id="Tbv-gj-bZB"/>
+                            <constraint firstItem="Hpr-bD-g9I" firstAttribute="trailing" secondItem="903-vU-U8s" secondAttribute="trailing" constant="16" id="V6r-2a-HgD"/>
+                            <constraint firstItem="GnP-6q-dJy" firstAttribute="top" secondItem="Hpr-bD-g9I" secondAttribute="top" id="WIK-Fb-b9y"/>
+                            <constraint firstItem="903-vU-U8s" firstAttribute="leading" secondItem="Hpr-bD-g9I" secondAttribute="leading" constant="16" id="XP4-Zu-ET7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="sendButton" destination="ng2-SV-bt5" id="AM8-LR-xhG"/>
+                        <outlet property="tableView" destination="GnP-6q-dJy" id="9nG-j1-VCv"/>
+                        <outlet property="textField" destination="903-vU-U8s" id="4cg-Ig-56o"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="keP-go-YxO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1070.9923664122136" y="-35.211267605633807"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="arrow.right.circle" catalog="system" width="128" height="123"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

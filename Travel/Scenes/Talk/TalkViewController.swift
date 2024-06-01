@@ -47,4 +47,11 @@ extension TalkViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = .none
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let data = list[indexPath.row]
+        let vc = storyboard?.instantiateViewController(withIdentifier: ChatViewController.identifier) as! ChatViewController
+        vc.data = data
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
