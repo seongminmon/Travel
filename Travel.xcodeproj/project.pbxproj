@@ -26,6 +26,11 @@
 		24419E612C071146008CB43C /* CityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419E5E2C071146008CB43C /* CityCell.swift */; };
 		24419E6E2C0864F6008CB43C /* RestaurantMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419E6D2C0864F6008CB43C /* RestaurantMapViewController.swift */; };
 		24419E702C08723A008CB43C /* ReuseIdentifierProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419E6F2C08723A008CB43C /* ReuseIdentifierProtocol.swift */; };
+		24419EAF2C0B016D008CB43C /* ChattingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419EAE2C0B016D008CB43C /* ChattingData.swift */; };
+		24419EB12C0B019D008CB43C /* Talk.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 24419EB02C0B019D008CB43C /* Talk.storyboard */; };
+		24419EB32C0B01F5008CB43C /* TalkViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419EB22C0B01F5008CB43C /* TalkViewController.swift */; };
+		24419EB72C0B04B1008CB43C /* TalkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24419EB52C0B04B1008CB43C /* TalkTableViewCell.swift */; };
+		24419EB82C0B04B1008CB43C /* TalkTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24419EB62C0B04B1008CB43C /* TalkTableViewCell.xib */; };
 		2494447D2C04879200AEBAB4 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2494447C2C04879100AEBAB4 /* TravelModel.swift */; };
 		249A053B2C05D0200074D224 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249A053A2C05D0200074D224 /* UIColor+.swift */; };
 		24BBED352C04AC1500567F66 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BBED342C04AC1500567F66 /* TravelViewController.swift */; };
@@ -65,6 +70,11 @@
 		24419E5F2C071146008CB43C /* CityCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CityCell.xib; sourceTree = "<group>"; };
 		24419E6D2C0864F6008CB43C /* RestaurantMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMapViewController.swift; sourceTree = "<group>"; };
 		24419E6F2C08723A008CB43C /* ReuseIdentifierProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReuseIdentifierProtocol.swift; sourceTree = "<group>"; };
+		24419EAE2C0B016D008CB43C /* ChattingData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChattingData.swift; sourceTree = "<group>"; };
+		24419EB02C0B019D008CB43C /* Talk.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Talk.storyboard; sourceTree = "<group>"; };
+		24419EB22C0B01F5008CB43C /* TalkViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkViewController.swift; sourceTree = "<group>"; };
+		24419EB52C0B04B1008CB43C /* TalkTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TalkTableViewCell.swift; sourceTree = "<group>"; };
+		24419EB62C0B04B1008CB43C /* TalkTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TalkTableViewCell.xib; sourceTree = "<group>"; };
 		2494447C2C04879100AEBAB4 /* TravelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		249A053A2C05D0200074D224 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
 		24BBED342C04AC1500567F66 /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
@@ -117,9 +127,8 @@
 				243101822C020F0600E19C97 /* AppDelegate.swift */,
 				243101842C020F0600E19C97 /* SceneDelegate.swift */,
 				243101862C020F0600E19C97 /* ViewController.swift */,
+				243101882C020F0600E19C97 /* Main.storyboard */,
 				249A053C2C05D0260074D224 /* Extension */,
-				24419E742C0875FB008CB43C /* Storyboard */,
-				24419E722C0875B7008CB43C /* Models */,
 				24419E732C0875F0008CB43C /* Scenes */,
 				2431018B2C020F0800E19C97 /* Assets.xcassets */,
 				2431018D2C020F0800E19C97 /* LaunchScreen.storyboard */,
@@ -131,22 +140,13 @@
 		24419E572C06FE5E008CB43C /* City */ = {
 			isa = PBXGroup;
 			children = (
+				24419E5A2C070046008CB43C /* City.storyboard */,
+				24419E582C06FE74008CB43C /* CityInfo.swift */,
 				24419E5C2C070144008CB43C /* CityViewController.swift */,
 				24419E5E2C071146008CB43C /* CityCell.swift */,
 				24419E5F2C071146008CB43C /* CityCell.xib */,
 			);
 			path = City;
-			sourceTree = "<group>";
-		};
-		24419E722C0875B7008CB43C /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				243101962C020F6900E19C97 /* MagazineInfo.swift */,
-				243101972C020F6900E19C97 /* Restaurant.swift */,
-				2494447C2C04879100AEBAB4 /* TravelModel.swift */,
-				24419E582C06FE74008CB43C /* CityInfo.swift */,
-			);
-			path = Models;
 			sourceTree = "<group>";
 		};
 		24419E732C0875F0008CB43C /* Scenes */ = {
@@ -156,20 +156,21 @@
 				24BBED412C04AE3A00567F66 /* Restaurants */,
 				24BBED422C04AE4D00567F66 /* Travels */,
 				24419E572C06FE5E008CB43C /* City */,
+				24419EB42C0B01F9008CB43C /* Talk */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
 		};
-		24419E742C0875FB008CB43C /* Storyboard */ = {
+		24419EB42C0B01F9008CB43C /* Talk */ = {
 			isa = PBXGroup;
 			children = (
-				243101882C020F0600E19C97 /* Main.storyboard */,
-				24BBED842C05B92C00567F66 /* Magazine.storyboard */,
-				24BBED862C05B93700567F66 /* Restaurant.storyboard */,
-				24BBED882C05B94100567F66 /* Travel.storyboard */,
-				24419E5A2C070046008CB43C /* City.storyboard */,
+				24419EB02C0B019D008CB43C /* Talk.storyboard */,
+				24419EAE2C0B016D008CB43C /* ChattingData.swift */,
+				24419EB22C0B01F5008CB43C /* TalkViewController.swift */,
+				24419EB52C0B04B1008CB43C /* TalkTableViewCell.swift */,
+				24419EB62C0B04B1008CB43C /* TalkTableViewCell.xib */,
 			);
-			path = Storyboard;
+			path = Talk;
 			sourceTree = "<group>";
 		};
 		249A053C2C05D0260074D224 /* Extension */ = {
@@ -185,6 +186,8 @@
 		24BBED402C04AE2C00567F66 /* Magazines */ = {
 			isa = PBXGroup;
 			children = (
+				24BBED842C05B92C00567F66 /* Magazine.storyboard */,
+				243101962C020F6900E19C97 /* MagazineInfo.swift */,
 				24BBED8A2C05BAAF00567F66 /* MagazineViewController.swift */,
 				24BBED8C2C05BB0100567F66 /* MagazineCell.swift */,
 				24BBED8D2C05BB0100567F66 /* MagazineCell.xib */,
@@ -195,6 +198,8 @@
 		24BBED412C04AE3A00567F66 /* Restaurants */ = {
 			isa = PBXGroup;
 			children = (
+				24BBED862C05B93700567F66 /* Restaurant.storyboard */,
+				243101972C020F6900E19C97 /* Restaurant.swift */,
 				24BBED902C05BEE600567F66 /* RestaurantViewController.swift */,
 				24419E6D2C0864F6008CB43C /* RestaurantMapViewController.swift */,
 				24BBED942C05C1FB00567F66 /* RestaurantCell.swift */,
@@ -206,6 +211,8 @@
 		24BBED422C04AE4D00567F66 /* Travels */ = {
 			isa = PBXGroup;
 			children = (
+				24BBED882C05B94100567F66 /* Travel.storyboard */,
+				2494447C2C04879100AEBAB4 /* TravelModel.swift */,
 				24BBED342C04AC1500567F66 /* TravelViewController.swift */,
 				24BBED362C04AC7F00567F66 /* TravelTableViewCell.swift */,
 				24BBED372C04AC7F00567F66 /* TravelTableViewCell.xib */,
@@ -281,10 +288,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24419EB12C0B019D008CB43C /* Talk.storyboard in Resources */,
 				24419E5B2C070046008CB43C /* City.storyboard in Resources */,
 				24BBED462C04B63400567F66 /* AdTableViewCell.xib in Resources */,
 				2431018C2C020F0800E19C97 /* Assets.xcassets in Resources */,
 				24BBED872C05B93700567F66 /* Restaurant.storyboard in Resources */,
+				24419EB82C0B04B1008CB43C /* TalkTableViewCell.xib in Resources */,
 				24BBED392C04AC7F00567F66 /* TravelTableViewCell.xib in Resources */,
 				2431018F2C020F0800E19C97 /* Base in Resources */,
 				24419E602C071146008CB43C /* CityCell.xib in Resources */,
@@ -303,7 +312,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				24419EB72C0B04B1008CB43C /* TalkTableViewCell.swift in Sources */,
 				24BBED972C05C1FB00567F66 /* RestaurantCell.swift in Sources */,
+				24419EAF2C0B016D008CB43C /* ChattingData.swift in Sources */,
 				24BBED8B2C05BAAF00567F66 /* MagazineViewController.swift in Sources */,
 				24419E612C071146008CB43C /* CityCell.swift in Sources */,
 				243101992C020F6900E19C97 /* Restaurant.swift in Sources */,
@@ -324,6 +335,7 @@
 				24419E542C06DFD8008CB43C /* AdDetailViewController.swift in Sources */,
 				24419E592C06FE74008CB43C /* CityInfo.swift in Sources */,
 				24419E5D2C070144008CB43C /* CityViewController.swift in Sources */,
+				24419EB32C0B01F5008CB43C /* TalkViewController.swift in Sources */,
 				249A053B2C05D0200074D224 /* UIColor+.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
