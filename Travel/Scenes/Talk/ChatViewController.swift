@@ -55,11 +55,17 @@ class ChatViewController: UIViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.keyboardDismissMode = .onDrag
-        
+
         var xib = UINib(nibName: ChatTableViewCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: ChatTableViewCell.identifier)
         xib = UINib(nibName: MyChatTableViewCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: MyChatTableViewCell.identifier)
+        
+        // 스크롤 맨 밑으로 이동하기
+        if let data {
+            let indexPath = IndexPath(row: data.chatList.count - 1, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        }
     }
     
     @objc func backButtonTapped() {
@@ -68,8 +74,7 @@ class ChatViewController: UIViewController {
     }
     
     @objc func sendButtonTapped() {
-        print(#function)
-        // TODO: - 메세지 보내기 구현
+        //
     }
 
 }
@@ -80,7 +85,6 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        // TODO: - cell 2개 사용하기
         guard let data = data?.chatList[indexPath.row] else { return UITableViewCell() }
         
         if data.user == .user {

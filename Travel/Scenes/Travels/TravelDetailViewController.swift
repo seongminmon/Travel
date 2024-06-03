@@ -24,10 +24,6 @@ class TravelDetailViewController: UIViewController {
         configureView()
     }
     
-    @objc func backButtonClicked() {
-        navigationController?.popViewController(animated: true)
-    }
-    
     func configureNavi() {
         navigationItem.title = data?.title
         
@@ -39,6 +35,10 @@ class TravelDetailViewController: UIViewController {
         )
         left.tintColor = .black
         navigationItem.leftBarButtonItem = left
+    }
+    
+    @objc func backButtonClicked() {
+        navigationController?.popViewController(animated: true)
     }
     
     func configureUI() {
