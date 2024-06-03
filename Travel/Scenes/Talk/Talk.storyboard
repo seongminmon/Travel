@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -62,19 +62,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="GnP-6q-dJy">
-                                <rect key="frame" x="0.0" y="59" width="393" height="701"/>
+                                <rect key="frame" x="0.0" y="59" width="393" height="693"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="903-vU-U8s">
-                                <rect key="frame" x="16" y="768" width="361" height="50"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="iUE-NR-q3W">
+                                <rect key="frame" x="16" y="760" width="361" height="50"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="f2U-bc-u2a"/>
+                                    <constraint firstAttribute="height" constant="50" id="Bzw-4O-zh7"/>
                                 </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ng2-SV-bt5">
-                                <rect key="frame" x="329" y="773" width="40" height="40"/>
+                                <rect key="frame" x="329" y="765" width="40" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="jrr-o8-2uf"/>
                                     <constraint firstAttribute="width" constant="40" id="yoz-fM-ceE"/>
@@ -86,21 +88,21 @@
                         <viewLayoutGuide key="safeArea" id="Hpr-bD-g9I"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ng2-SV-bt5" firstAttribute="trailing" secondItem="903-vU-U8s" secondAttribute="trailing" constant="-8" id="GQD-eD-RTq"/>
-                            <constraint firstItem="903-vU-U8s" firstAttribute="top" secondItem="GnP-6q-dJy" secondAttribute="bottom" constant="8" id="KDf-52-eKD"/>
+                            <constraint firstItem="iUE-NR-q3W" firstAttribute="top" secondItem="GnP-6q-dJy" secondAttribute="bottom" constant="8" id="BIL-cA-wH0"/>
+                            <constraint firstItem="ng2-SV-bt5" firstAttribute="trailing" secondItem="iUE-NR-q3W" secondAttribute="trailing" constant="-8" id="Lw4-fR-9QX"/>
                             <constraint firstItem="Hpr-bD-g9I" firstAttribute="trailing" secondItem="GnP-6q-dJy" secondAttribute="trailing" id="OIO-sr-DDD"/>
-                            <constraint firstItem="ng2-SV-bt5" firstAttribute="centerY" secondItem="903-vU-U8s" secondAttribute="centerY" id="QBx-7W-FNM"/>
-                            <constraint firstItem="Hpr-bD-g9I" firstAttribute="bottom" secondItem="903-vU-U8s" secondAttribute="bottom" id="QQd-O7-gze"/>
+                            <constraint firstItem="ng2-SV-bt5" firstAttribute="centerY" secondItem="iUE-NR-q3W" secondAttribute="centerY" id="PW4-2A-dpb"/>
                             <constraint firstItem="GnP-6q-dJy" firstAttribute="leading" secondItem="Hpr-bD-g9I" secondAttribute="leading" id="Tbv-gj-bZB"/>
-                            <constraint firstItem="Hpr-bD-g9I" firstAttribute="trailing" secondItem="903-vU-U8s" secondAttribute="trailing" constant="16" id="V6r-2a-HgD"/>
                             <constraint firstItem="GnP-6q-dJy" firstAttribute="top" secondItem="Hpr-bD-g9I" secondAttribute="top" id="WIK-Fb-b9y"/>
-                            <constraint firstItem="903-vU-U8s" firstAttribute="leading" secondItem="Hpr-bD-g9I" secondAttribute="leading" constant="16" id="XP4-Zu-ET7"/>
+                            <constraint firstItem="Hpr-bD-g9I" firstAttribute="trailing" secondItem="iUE-NR-q3W" secondAttribute="trailing" constant="16" id="inf-uo-bE5"/>
+                            <constraint firstItem="iUE-NR-q3W" firstAttribute="leading" secondItem="Hpr-bD-g9I" secondAttribute="leading" constant="16" id="moQ-GD-k7f"/>
+                            <constraint firstItem="Hpr-bD-g9I" firstAttribute="bottom" secondItem="iUE-NR-q3W" secondAttribute="bottom" constant="8" id="xkI-gE-eHD"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="sendButton" destination="ng2-SV-bt5" id="AM8-LR-xhG"/>
                         <outlet property="tableView" destination="GnP-6q-dJy" id="9nG-j1-VCv"/>
-                        <outlet property="textField" destination="903-vU-U8s" id="4cg-Ig-56o"/>
+                        <outlet property="textView" destination="iUE-NR-q3W" id="alu-sm-8cn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="keP-go-YxO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -110,6 +112,9 @@
     </scenes>
     <resources>
         <image name="arrow.right.circle" catalog="system" width="128" height="123"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

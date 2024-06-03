@@ -36,6 +36,5 @@ class MyChatTableViewCell: UITableViewCell {
     func configureCell(_ data: Chat) {
         contentsLabel.text = data.message
         dateLabel.text = data.chatDateString
-        print(data.chatDateString)
     }
 }

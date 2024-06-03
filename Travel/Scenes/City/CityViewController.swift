@@ -7,18 +7,6 @@
 
 import UIKit
 
-//enum Option: Int {
-//    case total, domestic, overseas
-//    
-//    var list: [City] {
-//        switch self {
-//        case .total: return CityInfo.city
-//        case .domestic: return CityInfo.city.filter { $0.domestic_travel }
-//        case .overseas: return CityInfo.city.filter { !$0.domestic_travel }
-//        }
-//    }
-//}
-
 class CityViewController: UIViewController {
 
     @IBOutlet var searchBar: UISearchBar!

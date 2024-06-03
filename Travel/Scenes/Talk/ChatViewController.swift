@@ -10,10 +10,11 @@ import UIKit
 class ChatViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
-    @IBOutlet var textField: UITextField!
+    @IBOutlet var textView: UITextView!
     @IBOutlet var sendButton: UIButton!
     
     var data: ChatRoom?
+    let placeholder = "메세지를 입력하세요"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,8 +38,17 @@ class ChatViewController: UIViewController {
     }
     
     func configureView() {
-        textField.delegate = self
-        textField.placeholder = "메세지를 입력하세요"
+        textView.delegate = self
+        textView.text = placeholder
+        textView.textColor = .lightGray
+        
+        textView.layer.cornerRadius = 10
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.black.cgColor
+        
+        // 텍스트뷰 최대 줄 수 설정
+        textView.textContainer.maximumNumberOfLines = 1
+        textView.isScrollEnabled = true
         
         sendButton.setImage(UIImage(systemName: "arrow.right.circle"), for: .normal)
         sendButton.tintColor = .lightGray
@@ -55,6 +65,7 @@ class ChatViewController: UIViewController {
         
         tableView.rowHeight = UITableView.automaticDimension
         tableView.keyboardDismissMode = .onDrag
+        tableView.separatorStyle = .none
 
         var xib = UINib(nibName: ChatTableViewCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: ChatTableViewCell.identifier)
@@ -76,7 +87,6 @@ class ChatViewController: UIViewController {
     @objc func sendButtonTapped() {
         //
     }
-
 }
 
 extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
@@ -103,6 +113,18 @@ extension ChatViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-extension ChatViewController: UITextFieldDelegate {
+extension ChatViewController: UITextViewDelegate {
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            textView.text = placeholder
+            textView.textColor = .lightGray
+        }
+    }
     
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .lightGray {
+            textView.text = nil
+            textView.textColor = .black
+        }
+    }
 }
