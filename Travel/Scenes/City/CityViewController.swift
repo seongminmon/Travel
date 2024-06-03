@@ -51,12 +51,12 @@ class CityViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        let xib = UINib(nibName: CityCell.identifier, bundle: nil)
-        tableView.register(xib, forCellReuseIdentifier: CityCell.identifier)
-        
         tableView.rowHeight = 120
         tableView.separatorStyle = .none
         tableView.keyboardDismissMode = .onDrag
+        
+        let xib = UINib(nibName: CityCell.identifier, bundle: nil)
+        tableView.register(xib, forCellReuseIdentifier: CityCell.identifier)
     }
     
     func setSelectedList() {

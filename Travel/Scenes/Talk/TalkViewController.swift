@@ -12,12 +12,14 @@ class TalkViewController: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var tableView: UITableView!
     
+    let total = ChatRoom.mockChatList
     var list = ChatRoom.mockChatList
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         navigationItem.title = "TRAVEL TALK"
+        searchBar.delegate = self
         searchBar.placeholder = "친구 이름을 검색해보세요"
         configureTableView()
     }
@@ -27,6 +29,7 @@ class TalkViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.rowHeight = 80
+        tableView.keyboardDismissMode = .onDrag
         
         let xib = UINib(nibName: TalkTableViewCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: TalkTableViewCell.identifier)
@@ -54,4 +57,21 @@ extension TalkViewController: UITableViewDelegate, UITableViewDataSource {
         vc.data = data
         navigationController?.pushViewController(vc, animated: true)
     }
+}
+
+extension TalkViewController: UISearchBarDelegate {
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText == "" {
+            list = total
+        } else {
+            list = total.filter { $0.chatroomName.contains(searchText) }
+        }
+        tableView.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        view.endEditing(true)
+    }
+    
 }

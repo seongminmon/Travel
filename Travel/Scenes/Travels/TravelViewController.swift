@@ -34,7 +34,7 @@ class TravelViewController: UIViewController {
 }
 
 extension TravelViewController: UITableViewDataSource {
-    
+
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return list[indexPath.row].ad ? UITableView.automaticDimension : 150
     }
@@ -70,7 +70,6 @@ extension TravelViewController: UITableViewDataSource {
             )
             cell.likeButton.tag = indexPath.row
             
-//            cell.selectionStyle = .none
             return cell
         }
     }

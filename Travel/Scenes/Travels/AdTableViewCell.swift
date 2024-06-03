@@ -18,13 +18,7 @@ class AdTableViewCell: UITableViewCell {
         configureUI()
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
-    
     func configureUI() {
-        print(#function)
-        
         mainLabel.font = .systemFont(ofSize: 18, weight: .bold)
         mainLabel.textAlignment = .center
         mainLabel.numberOfLines = 0
@@ -39,7 +33,6 @@ class AdTableViewCell: UITableViewCell {
         markLabel.text = "AD"
         
         backView.layer.cornerRadius = 20
-        // TODO: - 셀을 탭하고 디테일뷰에 갔다왔을 때 색깔이 달라지는 문제 해결하기
         backView.backgroundColor = .random
     }
     

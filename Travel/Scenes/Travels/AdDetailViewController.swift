@@ -15,7 +15,13 @@ class AdDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        configureNavi()
+        mainLabel.text = data?.title
+        mainLabel.numberOfLines = 0
+    }
+    
+    func configureNavi() {
         navigationItem.title = "광고 화면"
         
         let left = UIBarButtonItem(
@@ -26,9 +32,6 @@ class AdDetailViewController: UIViewController {
         )
         left.tintColor = .black
         navigationItem.leftBarButtonItem = left
-        
-        mainLabel.text = data?.title
-        mainLabel.numberOfLines = 0
     }
     
     @objc func closeButtonClicked() {

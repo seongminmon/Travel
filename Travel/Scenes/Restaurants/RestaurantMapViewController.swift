@@ -91,10 +91,8 @@ class RestaurantMapViewController: UIViewController {
 
 extension RestaurantMapViewController: MKMapViewDelegate {
     func mapView(_ mapView: MKMapView, didDeselect annotation: any MKAnnotation) {
-//        print(#function)
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
-//        print(#function)
     }
 }

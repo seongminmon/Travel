@@ -54,6 +54,7 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.rowHeight = UITableView.automaticDimension
+        tableView.keyboardDismissMode = .onDrag
         
         var xib = UINib(nibName: ChatTableViewCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: ChatTableViewCell.identifier)
