@@ -107,9 +107,30 @@ extension RestaurantMapViewController {
     // iOS 위치 서비스 활성화 여부 체크
     func checkDeviceLocationAuthorization() {
         if CLLocationManager.locationServicesEnabled() {
-            print("사용자의 위치 권한 상태 확인 후 -> .notDetermined일때 권한 요청")
+            print("사용자의 위치 권한 상태 확인")
+            let status = locationManager.authorizationStatus
+            checkCurrentLocationAuthorization(status)
         } else {
             print("위치 서비스가 꺼져 있어서 권한 요청 불가능 -> 설정으로 이동")
+        }
+    }
+    
+    func checkCurrentLocationAuthorization(_ status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined: // 아직 선택 안함
+            print("아직 선택 안함 -> 위치 권한 묻기")
+            locationManager.desiredAccuracy = kCLLocationAccuracyBest
+            locationManager.requestWhenInUseAuthorization()
+            
+        case .denied: // 허용 안함
+            print("권한 허용 안함 -> 설정으로 이동")
+            
+        case .authorizedWhenInUse: // 앱 사용중 허용함
+            print("앱 사용중 허용함 -> 위치 정보 가져오기")
+            locationManager.startUpdatingLocation()
+            
+        default:
+            print("ERROR")
         }
     }
     
