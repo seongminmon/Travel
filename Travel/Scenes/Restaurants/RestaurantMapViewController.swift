@@ -12,8 +12,8 @@ import CoreLocation
 class RestaurantMapViewController: UIViewController {
     
     @IBOutlet var mapView: MKMapView!
-    let locationManager = CLLocationManager()
     
+    let locationManager = CLLocationManager()
     let totalList = RestaurantList.restaurantArray
     var koreanList: [Restaurant] = []
     var etcList: [Restaurant] = []
@@ -26,6 +26,8 @@ class RestaurantMapViewController: UIViewController {
         
         setupNavi()
         setupMapView()
+        
+        locationManager.delegate = self
     }
     
     func setupNavi() {
@@ -96,5 +98,24 @@ extension RestaurantMapViewController: MKMapViewDelegate {
     }
     
     func mapView(_ mapView: MKMapView, regionDidChangeAnimated animated: Bool) {
+    }
+}
+
+extension RestaurantMapViewController: CLLocationManagerDelegate {
+    
+    // 사용자의 위치를 성공적으로 가져온 경우
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        print(#function)
+        print(locations)
+    }
+    
+    // 사용자의 위치를 가지고 오지 못한 경우
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
+        print(#function)
+    }
+    
+    // 사용자의 권한 상태가 바뀔 때
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        print(#function)
     }
 }
