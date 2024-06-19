@@ -52,6 +52,7 @@
 		24BBED912C05BEE600567F66 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BBED902C05BEE600567F66 /* RestaurantViewController.swift */; };
 		24BBED962C05C1FB00567F66 /* RestaurantCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BBED952C05C1FB00567F66 /* RestaurantCell.xib */; };
 		24BBED972C05C1FB00567F66 /* RestaurantCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BBED942C05C1FB00567F66 /* RestaurantCell.swift */; };
+		24D5AD852C0ED382001624D9 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 24D5AD842C0ED382001624D9 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -109,6 +110,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				243101A02C02133700E19C97 /* Kingfisher in Frameworks */,
+				24D5AD852C0ED382001624D9 /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -257,6 +259,7 @@
 			name = Travel;
 			packageProductDependencies = (
 				2431019F2C02133700E19C97 /* Kingfisher */,
+				24D5AD842C0ED382001624D9 /* SnapKit */,
 			);
 			productName = Travel;
 			productReference = 2431017F2C020F0600E19C97 /* Travel.app */;
@@ -288,6 +291,7 @@
 			mainGroup = 243101762C020F0600E19C97;
 			packageReferences = (
 				2431019E2C02133700E19C97 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				24D5AD832C0ED382001624D9 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = 243101802C020F0600E19C97 /* Products */;
 			projectDirPath = "";
@@ -599,6 +603,14 @@
 				minimumVersion = 7.11.0;
 			};
 		};
+		24D5AD832C0ED382001624D9 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -606,6 +618,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2431019E2C02133700E19C97 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		24D5AD842C0ED382001624D9 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 24D5AD832C0ED382001624D9 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

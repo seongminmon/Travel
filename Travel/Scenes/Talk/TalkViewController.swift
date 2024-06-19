@@ -70,8 +70,9 @@ extension TalkViewController: UISearchBarDelegate {
         tableView.reloadData()
     }
     
+    // 서치버튼 눌렀을때
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // 키보드 내리기
         view.endEditing(true)
     }
-    
 }

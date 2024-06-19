@@ -24,6 +24,20 @@ class ChatViewController: UIViewController {
         configureTableView()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        // 테이블뷰 스크롤 맨 밑으로 이동하기
+        if let data {
+            let indexPath = IndexPath(row: data.chatList.count - 1, section: 0)
+            tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
+        }
+    }
+    
     func configureNavi() {
         navigationItem.title = data?.chatroomName ?? "익명"
         
@@ -71,12 +85,6 @@ class ChatViewController: UIViewController {
         tableView.register(xib, forCellReuseIdentifier: ChatTableViewCell.identifier)
         xib = UINib(nibName: MyChatTableViewCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: MyChatTableViewCell.identifier)
-        
-        // 스크롤 맨 밑으로 이동하기
-        if let data {
-            let indexPath = IndexPath(row: data.chatList.count - 1, section: 0)
-            tableView.scrollToRow(at: indexPath, at: .bottom, animated: false)
-        }
     }
     
     @objc func backButtonTapped() {
@@ -126,5 +134,9 @@ extension ChatViewController: UITextViewDelegate {
             textView.text = nil
             textView.textColor = .black
         }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        //
     }
 }
