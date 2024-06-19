@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 
-
 struct Restaurant {
     let image: String
     let latitude: Double
