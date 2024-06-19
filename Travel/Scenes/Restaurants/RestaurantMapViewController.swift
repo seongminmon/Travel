@@ -7,10 +7,12 @@
 
 import UIKit
 import MapKit
+import CoreLocation
 
 class RestaurantMapViewController: UIViewController {
     
     @IBOutlet var mapView: MKMapView!
+    let locationManager = CLLocationManager()
     
     let totalList = RestaurantList.restaurantArray
     var koreanList: [Restaurant] = []
