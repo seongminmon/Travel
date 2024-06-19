@@ -28,6 +28,7 @@ class RestaurantMapViewController: UIViewController {
         setupMapView()
         
         locationManager.delegate = self
+        checkDeviceLocationAuthorization()
     }
     
     func setupNavi() {
@@ -101,6 +102,19 @@ extension RestaurantMapViewController: MKMapViewDelegate {
     }
 }
 
+extension RestaurantMapViewController {
+    
+    // iOS 위치 서비스 활성화 여부 체크
+    func checkDeviceLocationAuthorization() {
+        if CLLocationManager.locationServicesEnabled() {
+            print("사용자의 위치 권한 상태 확인 후 -> .notDetermined일때 권한 요청")
+        } else {
+            print("위치 서비스가 꺼져 있어서 권한 요청 불가능 -> 설정으로 이동")
+        }
+    }
+    
+}
+
 extension RestaurantMapViewController: CLLocationManagerDelegate {
     
     // 사용자의 위치를 성공적으로 가져온 경우
@@ -117,5 +131,6 @@ extension RestaurantMapViewController: CLLocationManagerDelegate {
     // 사용자의 권한 상태가 바뀔 때
     func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
         print(#function)
+        checkDeviceLocationAuthorization()
     }
 }
