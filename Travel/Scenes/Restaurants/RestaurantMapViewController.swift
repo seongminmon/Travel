@@ -107,14 +107,16 @@ extension RestaurantMapViewController {
     // iOS 위치 서비스 활성화 여부 체크
     func checkDeviceLocationAuthorization() {
         if CLLocationManager.locationServicesEnabled() {
-            print("사용자의 위치 권한 상태 확인")
+            print("현재 위치 권한 상태 확인")
             let status = locationManager.authorizationStatus
             checkCurrentLocationAuthorization(status)
         } else {
             print("위치 서비스가 꺼져 있어서 권한 요청 불가능 -> 설정으로 이동")
+            showLocationSettingAlert()
         }
     }
     
+    // 현재 위치 권한 상태 확인
     func checkCurrentLocationAuthorization(_ status: CLAuthorizationStatus) {
         switch status {
         case .notDetermined: // 아직 선택 안함
@@ -124,6 +126,7 @@ extension RestaurantMapViewController {
             
         case .denied: // 허용 안함
             print("권한 허용 안함 -> 설정으로 이동")
+            showLocationSettingAlert()
             
         case .authorizedWhenInUse: // 앱 사용중 허용함
             print("앱 사용중 허용함 -> 위치 정보 가져오기")
@@ -132,6 +135,27 @@ extension RestaurantMapViewController {
         default:
             print("ERROR")
         }
+    }
+    
+    // '설정으로 이동' 권유하는 Alert 띄우기
+    func showLocationSettingAlert() {
+        let alert = UIAlertController(
+            title: "위치 정보 이용",
+            message: "위치 서비스를 이용할 수 없습니다. 기기의 '설정>개인정보 보호'에서 위치 서비스를 켜주세요.",
+            preferredStyle: .alert
+        )
+        
+        let goSetting = UIAlertAction(title: "설정으로 이동", style: .default) { _ in
+            if let setting = URL(string: UIApplication.openSettingsURLString) {
+                UIApplication.shared.open(setting)
+            }
+        }
+        let cancel = UIAlertAction(title: "취소", style: .cancel)
+        
+        alert.addAction(goSetting)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true)
     }
     
 }
