@@ -71,12 +71,16 @@ class RestaurantMapViewController: UIViewController {
     func setupMapView() {
         mapView.delegate = self
         
-        // 처음 위치는 모든 식당 중 랜덤
+        // 처음엔 식당 중 랜덤 위치로 이동
         let center = totalList.randomElement()!.location
-        mapView.region = MKCoordinateRegion(center: center, latitudinalMeters: 1000, longitudinalMeters: 1000)
+        moveRegion(center: center)
         
         // 처음 어노테이션은 전체 선택
         makeAnnotation(totalList)
+    }
+    
+    func moveRegion(center: CLLocationCoordinate2D) {
+        mapView.region = MKCoordinateRegion(center: center, latitudinalMeters: 500, longitudinalMeters: 500)
     }
     
     func makeAnnotation(_ selectedList: [Restaurant]) {
@@ -166,11 +170,23 @@ extension RestaurantMapViewController: CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         print(#function)
         print(locations)
+        
+        // 사용자 위치 중심으로 이동
+        if let center = locations.last?.coordinate {
+            moveRegion(center: center)
+        } else {
+            // 위치 정보 못 가져왔으면 기본 위치로 이동
+            let center = CLLocationCoordinate2D(latitude: 37.517742, longitude: 126.886463)
+            moveRegion(center: center)
+        }
     }
     
     // 사용자의 위치를 가지고 오지 못한 경우
     func locationManager(_ manager: CLLocationManager, didFailWithError error: any Error) {
         print(#function)
+        // 위치 정보 허용 안 할시 기본 위치로 이동
+        let center = CLLocationCoordinate2D(latitude: 37.517742, longitude: 126.886463)
+        moveRegion(center: center)
     }
     
     // 사용자의 권한 상태가 바뀔 때
