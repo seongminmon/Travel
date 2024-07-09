@@ -38,6 +38,7 @@
 		24419EC22C0B33E6008CB43C /* MyChatTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24419EC02C0B33E6008CB43C /* MyChatTableViewCell.xib */; };
 		2494447D2C04879200AEBAB4 /* TravelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2494447C2C04879100AEBAB4 /* TravelModel.swift */; };
 		249A053B2C05D0200074D224 /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 249A053A2C05D0200074D224 /* UIColor+.swift */; };
+		24B5155B2C3D372600DF89AA /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24B5155A2C3D372600DF89AA /* Observable.swift */; };
 		24BBED352C04AC1500567F66 /* TravelViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BBED342C04AC1500567F66 /* TravelViewController.swift */; };
 		24BBED382C04AC7F00567F66 /* TravelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BBED362C04AC7F00567F66 /* TravelTableViewCell.swift */; };
 		24BBED392C04AC7F00567F66 /* TravelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24BBED372C04AC7F00567F66 /* TravelTableViewCell.xib */; };
@@ -88,6 +89,7 @@
 		24419EC02C0B33E6008CB43C /* MyChatTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyChatTableViewCell.xib; sourceTree = "<group>"; };
 		2494447C2C04879100AEBAB4 /* TravelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TravelModel.swift; sourceTree = "<group>"; };
 		249A053A2C05D0200074D224 /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		24B5155A2C3D372600DF89AA /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
 		24BBED342C04AC1500567F66 /* TravelViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelViewController.swift; sourceTree = "<group>"; };
 		24BBED362C04AC7F00567F66 /* TravelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelTableViewCell.swift; sourceTree = "<group>"; };
 		24BBED372C04AC7F00567F66 /* TravelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TravelTableViewCell.xib; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 				243101842C020F0600E19C97 /* SceneDelegate.swift */,
 				243101862C020F0600E19C97 /* ViewController.swift */,
 				243101882C020F0600E19C97 /* Main.storyboard */,
+				24B5155A2C3D372600DF89AA /* Observable.swift */,
 				249A053C2C05D0260074D224 /* Extension */,
 				24419E732C0875F0008CB43C /* Scenes */,
 				2431018B2C020F0800E19C97 /* Assets.xcassets */,
@@ -357,6 +360,7 @@
 				24BBED352C04AC1500567F66 /* TravelViewController.swift in Sources */,
 				24419E542C06DFD8008CB43C /* AdDetailViewController.swift in Sources */,
 				24419E592C06FE74008CB43C /* CityInfo.swift in Sources */,
+				24B5155B2C3D372600DF89AA /* Observable.swift in Sources */,
 				24419EBA2C0B2E10008CB43C /* ChatViewController.swift in Sources */,
 				24419E5D2C070144008CB43C /* CityViewController.swift in Sources */,
 				24419EB32C0B01F5008CB43C /* TalkViewController.swift in Sources */,
