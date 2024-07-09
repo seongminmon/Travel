@@ -13,9 +13,6 @@ class CityViewController: UIViewController {
     @IBOutlet var segment: UISegmentedControl!
     @IBOutlet var tableView: UITableView!
     
-//    let list: [City] = CityInfo.city
-//    lazy var selectedList: [City] = list
-    
     let viewModel = CityViewModel()
     
     override func viewDidLoad() {
@@ -50,8 +47,6 @@ class CityViewController: UIViewController {
     
     @objc func segmentValueChanged(sender: UISegmentedControl) {
         viewModel.inputSegmentValueChanged.value = sender.selectedSegmentIndex
-//        setSelectedList()
-//        tableView.reloadData()
         
         searchBar.text = ""
         view.endEditing(true)
@@ -68,31 +63,6 @@ class CityViewController: UIViewController {
         let xib = UINib(nibName: CityCell.identifier, bundle: nil)
         tableView.register(xib, forCellReuseIdentifier: CityCell.identifier)
     }
-    
-//    func setSelectedList() {
-//        switch segment.selectedSegmentIndex {
-//        case 0:
-//            selectedList = list
-//        case 1:
-//            selectedList = list.filter { $0.domestic_travel }
-//        case 2:
-//            selectedList = list.filter { !$0.domestic_travel }
-//        default:
-//            break
-//        }
-//    }
-    
-//    func search(searchText: String) {
-//        let searchText = searchText.uppercased()
-//        setSelectedList()
-//        selectedList = selectedList.filter {
-//            $0.city_name.uppercased().contains(searchText) ||
-//            $0.city_english_name.uppercased().contains(searchText) ||
-//            $0.city_explain.uppercased().contains(searchText)
-//        }
-//        tableView.reloadData()
-//    }
-    
 }
 
 extension CityViewController: UITableViewDataSource, UITableViewDelegate {
@@ -112,18 +82,14 @@ extension CityViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 extension CityViewController: UISearchBarDelegate {
-//    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        guard let searchText = searchBar.text else {
-//            return
-//        }
-//        search(searchText: searchText)
-//        // 키보드 내리기
-//        searchBar.resignFirstResponder()
-//    }
-//    
-//    // 실시간 검색
-//    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-//        search(searchText: searchText)
-//    }
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        // 키보드 내리기
+        searchBar.resignFirstResponder()
+    }
+    
+    // 실시간 검색
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        viewModel.inputSearchBarTextDidChange.value = searchText
+    }
     
 }

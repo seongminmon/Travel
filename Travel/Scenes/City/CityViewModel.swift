@@ -13,7 +13,7 @@ final class CityViewModel {
     // 세그먼트 선택
     var inputSegmentValueChanged = Observable(0)
     // 서치바 검색
-//    var inputSearchBarTextDidChange: Observable<String?> = Observable("")
+    var inputSearchBarTextDidChange = Observable("")
     
     // MARK: - Output
     var outputSelectedList = Observable(CityInfo.city)
@@ -21,6 +21,9 @@ final class CityViewModel {
     init() {
         inputSegmentValueChanged.bind { _ in
             self.setSelectedList()
+        }
+        inputSearchBarTextDidChange.bind { _ in
+            self.search()
         }
     }
     
@@ -34,6 +37,17 @@ final class CityViewModel {
             outputSelectedList.value = CityInfo.city.filter { !$0.domestic_travel }
         default:
             break
+        }
+    }
+    
+    private func search() {
+        setSelectedList()
+        guard !inputSearchBarTextDidChange.value.isEmpty else { return }
+        let searchText = inputSearchBarTextDidChange.value.uppercased()
+        outputSelectedList.value = outputSelectedList.value.filter {
+            $0.city_name.uppercased().contains(searchText) ||
+            $0.city_english_name.uppercased().contains(searchText) ||
+            $0.city_explain.uppercased().contains(searchText)
         }
     }
 }
