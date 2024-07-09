@@ -110,13 +110,15 @@ extension RestaurantMapViewController {
     
     // iOS 위치 서비스 활성화 여부 체크
     func checkDeviceLocationAuthorization() {
-        if CLLocationManager.locationServicesEnabled() {
-            print("현재 위치 권한 상태 확인")
-            let status = locationManager.authorizationStatus
-            checkCurrentLocationAuthorization(status)
-        } else {
-            print("위치 서비스가 꺼져 있어서 권한 요청 불가능 -> 설정으로 이동")
-            showLocationSettingAlert()
+        DispatchQueue.global().async {
+            if CLLocationManager.locationServicesEnabled() {
+                print("현재 위치 권한 상태 확인")
+                let status = self.locationManager.authorizationStatus
+                self.checkCurrentLocationAuthorization(status)
+            } else {
+                print("위치 서비스가 꺼져 있어서 권한 요청 불가능 -> 설정으로 이동")
+                self.showLocationSettingAlert()
+            }
         }
     }
     
