@@ -16,6 +16,8 @@ class CityViewController: UIViewController {
     let list: [City] = CityInfo.city
     lazy var selectedList: [City] = list
     
+    let viewModel = CityViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
